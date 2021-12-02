@@ -1,6 +1,7 @@
 package com.bus.buses.controller
-import com.bus.buses.Model.Salid
-import com.bus.buses.Model.SalidService
+import com.bus.buses.Model.Chofer
+import com.bus.buses.Model.ChoferService
+
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.*
 
@@ -9,29 +10,28 @@ import org.springframework.web.bind.annotation.*
 @CrossOrigin(methods = [RequestMethod.GET, RequestMethod.POST, RequestMethod.PATCH, RequestMethod.PUT])
 class ChoferController {
     @Autowired
-    lateinit var SalidService:SalidService
-
+    lateinit var ChoferService:ChoferService
     @GetMapping
-    fun list(): List<Salid>{
-        return SalidService.list()
+    fun list(): List<Chofer>{
+        return ChoferService.list()
     }
     @PostMapping
-    fun save(salid: Salid): Salid {
-        return SalidService.save(salid)
+    fun save(chofer: Chofer): Chofer {
+        return ChoferService.save(chofer)
     }
     @PutMapping
-    fun update (@RequestBody salid: Salid): Salid {
-        return  SalidService.update(salid)
+    fun update (@RequestBody chofer: Chofer): Chofer {
+        return  ChoferService.update(chofer)
     }
 
     @PatchMapping
-    fun updateDescription (@RequestBody salid: Salid): Salid {
-        return SalidService.updateDescription(salid)
+    fun updateDescription (@RequestBody chofer: Chofer): Chofer {
+        return ChoferService.updateDescription(chofer)
     }
 
     @DeleteMapping("/delete/{id}")
     fun delete (@PathVariable("id") id: Long):Boolean{
-        return SalidService.delete(id)
+        return ChoferService.delete(id)
     }
 
 }

@@ -8,6 +8,7 @@ class Salid {
     @Id
     @Column(updatable = false)
     var id: Long? = null
+    var salid: String?=null
     var horasal: String? = null
 
 }

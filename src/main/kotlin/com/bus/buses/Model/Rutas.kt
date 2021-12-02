@@ -9,5 +9,6 @@ class Rutas {
     @Column(updatable = false)
     var id: Long? = null
     var ruta: String? = null
+    var tiempo: String? =null
 
 }

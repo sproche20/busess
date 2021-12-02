@@ -10,5 +10,7 @@ class Chofer{
     @Column(updatable = false)
     var id: Long? = null
     var chofer: String? = null
+    var cedula: String?= null
+    var codLic: String?= null
 
 }
